@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 Error</title>
+    <style>
+        .title{
+            margin: auto;
+            animation-name: ta;
+            animation-duration:1s;
+            animation-fill-mode: both;
+            text-align: center;
+        }
+        .para{
+            margin: auto;
+            animation-name: pa;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+            text-align: center;
+        }
+        @keyframes ta{
+            from{transform: translateX(100%);opacity: 0;}
+            to{transform: translateX(0%);opacity: 1;}
+        }
+        @keyframes pa{
+            from{transform: translateY(1200%);opacity: 0;}
+            to{transform: translateY(0%);opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>4  0  4</h1>
+        <h2>Page Not Found</h2>
+    </div>
+    <div class="para">
+        从前有座山<br>
+        山里有座庙<br>
+        庙里有页面<br>
+        我却找不到<br>
+        <a href="https://Jason4zh.github.io/">
+            <button style="cursor: pointer;background: url(image/404-button.png);width: 130px;height: 60px;">
+                返回首页
+            </button>
+        </a>
+    </div>
+</body>
+</html>

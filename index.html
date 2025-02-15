@@ -7,35 +7,34 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background-image: url('image/main-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            color: #333;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* 添加半透明背景 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 8px;
             margin-bottom: 20px;
         }
         .footer {
-            background-color: #fff;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 8px;
             margin-top: auto;
         }
         h1, h2, h3 {
-            color: #333;
+            color: inherit;
         }
         a {
             color: #007bff;
@@ -54,7 +53,7 @@
             margin-bottom: 20px;
         }
         .card {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.9); /* 卡片背景颜色调整 */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
@@ -75,7 +74,7 @@
         }
     </style>
 </head>
-<body background="image/main-background.jpg">
+<body>
     <div class="container header">
         <h1>Welcome to Jason4zh's Site</h1>
         <a href="https://github.com/Jason4zh" target="_blank">作者Github</a>

@@ -5,118 +5,148 @@
     <title>Jason4zh's Site</title>
     <link rel="shortcut icon" href="image/main-favicon.ico">
     <style>
-        .title{
-            margin: auto;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
             text-align: center;
         }
-        .main{
-            margin: 10%;
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
-        .bottom{
-            margin: auto;
-            text-align: center;
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-            line-height: 50px;
+        .footer {
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: auto;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .quote {
+            margin: 20px 0;
+            font-style: italic;
+            color: #6c757d;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: left;
+            width: calc(50% - 20px);
+        }
+        .card-title {
+            margin-bottom: 10px;
+        }
+        .card-links a {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
-<body background="image/main-background.jpg">
-    <div class="title">
+<body>
+    <div class="container header">
         <h1>Welcome to Jason4zh's Site</h1>
-        <a href="https://github.com/Jason4zh" target="_blank">作者Github</a><br>
-        <script language="javascript">
-            var a=parseInt(Math.random()*100%20);
-            switch(a){
-                case 0:
-                    document.write("辛勤的蜜蜂永没有时间悲哀。——布莱克");
-                    break;
-                case 1:
-                    document.write("我这个人走得很慢，但是我从不后退。——亚伯拉罕·林肯");
-                    break;
-                case 2:
-                    document.write("一个人几乎可以在任何他怀有无限热忱的事情上成功。 ——查尔斯·史考伯");
-                    break;
-                case 3:
-                    document.write("深窥自己的心，而后发觉一切的奇迹在你自己。——培根");
-                    break;
-                case 4:
-                    document.write("每一种挫折或不利的突变，是带着同样或较大的有利的种子。——爱默生");
-                    break;
-                case 5:
-                    document.write("少而好学，如日出之阳；壮而好学，如日中之光；老而好学，如炳烛之明。——刘向");
-                    break;
-                case 6:
-                    document.write("芸芸众生，孰不爱生?爱生之极，进而爱群。 —— 秋瑾");
-                    break;
-                case 7:
-                    document.write("人生不是一种享乐，而是一桩十分沉重的工作。——列夫·托尔斯泰");
-                    break;
-                case 8:
-                    document.write("生活真象这杯浓酒，不经三番五次的提炼呵，就不会这样可口! —— 郭小川");
-                    break;
-                case 9:
-                    document.write("节约时间，也就是使一个人的有限的生命，更加有效，而也就等于延长了人的寿命。——鲁迅");
-                    break;
-                case 10:
-                    document.write("人生像一本书，愚人哗啦哗啦地翻它，而贤者潜心细读。——保罗");
-                    break;
-                case 11:
-                    document.write("人生好像一盒火柴，严禁使用是愚蠢的，滥用则是危险的。——芥川龙之介");
-                    break;
-                case 12:
-                    document.write("患难之中的友谊，能够使患难舒缓。——莎士比亚");
-                    break;
-                case 13:
-                    document.write("有了坚定的意志，就等于给双脚添了一双翅膀。——乔·贝利");
-                    break;
-                case 14:
-                    document.write("忍耐和坚持虽是痛苦的事情，但却能渐渐地为你带来好处。 ——奥维德");
-                    break;
-                case 15:
-                    document.write("青年是学习智慧的时期，中年是付诸实践的时期。——卢梭");
-                    break;
-                case 16:
-                    document.write("自由是在法律许可的范围内任意行事的权利。——孟德斯鸠");
-                    break;
-                case 17:
-                    document.write("谁有历经千辛万苦的意志，谁就能达到任何目的。——米南德");
-                    break;
-                case 18:
-                    document.write("人生是个舞台，所以你得学会演好自己的角色。——帕拉马斯");
-                    break;
-                case 19:
-                    document.write("人生最终的价值在于觉醒和思考的能力，而不只在于生存。——亚里士多德");
-                    break;
-                case 20:
-                    document.write("友谊是一种和谐的平等。——毕达哥拉斯");
-                    break;
-            }
-        </script>
+        <a href="https://github.com/Jason4zh" target="_blank">作者Github</a>
+        <div class="quote">
+            <script language="javascript">
+                var quotes = [
+                    "辛勤的蜜蜂永没有时间悲哀。——布莱克",
+                    "我这个人走得很慢，但是我从不后退。——亚伯拉罕·林肯",
+                    "一个人几乎可以在任何他怀有无限热忱的事情上成功。 ——查尔斯·史考伯",
+                    "深窥自己的心，而后发觉一切的奇迹在你自己。——培根",
+                    "每一种挫折或不利的突变，是带着同样或较大的有利的种子。——爱默生",
+                    "少而好学，如日出之阳；壮而好学，如日中之光；老而好学，如炳烛之明。——刘向",
+                    "芸芸众生，孰不爱生?爱生之极，进而爱群。 —— 秋瑾",
+                    "人生不是一种享乐，而是一桩十分沉重的工作。——列夫·托尔斯泰",
+                    "生活真象这杯浓酒，不经三番五次的提炼呵，就不会这样可口! —— 郭小川",
+                    "节约时间，也就是使一个人的有限的生命，更加有效，而也就等于延长了人的寿命。——鲁迅",
+                    "人生像一本书，愚人哗啦哗啦地翻它，而贤者潜心细读。——保罗",
+                    "人生好像一盒火柴，严禁使用是愚蠢的，滥用则是危险的。——芥川龙之介",
+                    "患难之中的友谊，能够使患难舒缓。——莎士比亚",
+                    "有了坚定的意志，就等于给双脚添了一双翅膀。——乔·贝利",
+                    "忍耐和坚持虽是痛苦的事情，但却能渐渐地为你带来好处。 ——奥维德",
+                    "青年是学习智慧的时期，中年是付诸实践的时期。——卢梭",
+                    "自由是在法律许可的范围内任意行事的权利。——孟德斯鸠",
+                    "谁有历经千辛万苦的意志，谁就能达到任何目的。——米南德",
+                    "人生是个舞台，所以你得学会演好自己的角色。——帕拉马斯",
+                    "人生最终的价值在于觉醒和思考的能力，而不只在于生存。——亚里士多德",
+                    "友谊是一种和谐的平等。——毕达哥拉斯"
+                ];
+                document.write(quotes[Math.floor(Math.random() * quotes.length)]);
+            </script>
+        </div>
     </div>
-    <div class="main">
-        <h2>主要站点</h2>
-        <a href="https://jason4zh.github.io/lldq2music" target="_blank">流浪地球2原声大碟</a>
-        <br>
-        <a href="https://jason4zh.github.io/blog" target="_blank">个人博客</a>
-        <br>
-        <a href="https://jason4zh.github.io/online_gobang" target="_blank">在线五子棋</a>
-        <br>
-        <br>
-        <h2>Python项目</h2>
-        <h3>项目1:<h3>
-        This is a package which can make a MovingClock.
-        <a href="https://github.com/Jason4zh/MovingClock/">github</a><br>
-        <a href="https://pypi.org/project/MovingClock/">pypi</a>
-        <h3>项目2:</h3>
-        This is a package which can make a wheel to decide.
-        <a href="https://github.com/Jason4zh/WheelDecide">github</a><br>
-        <a href="https://pypi.org/project/WheelDecide/">pypi</a>
+    <div class="container main">
+        <div class="flex-container">
+            <div class="section card">
+                <h2 class="card-title">主要站点</h2>
+                <div class="card">
+                    <h3>流浪地球2原声大碟</h3>
+                    <a href="https://jason4zh.github.io/lldq2music" target="_blank">访问网站</a>
+                </div>
+                <div class="card">
+                    <h3>个人博客</h3>
+                    <a href="https://jason4zh.github.io/blog" target="_blank">访问博客</a>
+                </div>
+                <div class="card">
+                    <h3>在线五子棋</h3>
+                    <a href="https://jason4zh.github.io/online_gobang" target="_blank">开始游戏</a>
+                </div>
+            </div>
+            <div class="section card">
+                <h2 class="card-title">Python项目</h2>
+                <div class="card">
+                    <h3>项目1: MovingClock</h3>
+                    <p>This is a package which can make a MovingClock.</p>
+                    <a href="https://github.com/Jason4zh/MovingClock/" target="_blank">github</a><br>
+                    <a href="https://pypi.org/project/MovingClock/" target="_blank">pypi</a>
+                </div>
+                <div class="card">
+                    <h3>项目2: WheelDecide</h3>
+                    <p>This is a package which can make a wheel to decide.</p>
+                    <a href="https://github.com/Jason4zh/WheelDecide" target="_blank">github</a><br>
+                    <a href="https://pypi.org/project/WheelDecide/" target="_blank">pypi</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="bottom">
+    <div class="container footer">
         <h3>感谢Github Page提供的站点！</h3>
     </div>
 </body>
 </html>
+
+
+

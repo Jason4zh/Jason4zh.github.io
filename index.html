@@ -1,83 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason4zh's Site</title>
     <link rel="shortcut icon" href="image/main-favicon.ico">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('image/main-background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            color: #333;
+            padding: 20px;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.9); /* 添加半透明背景 */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+        
         .footer {
             margin-top: auto;
-        }
-        h1, h2, h3 {
-            color: inherit;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 5px;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .quote {
-            margin: 20px 0;
-            font-style: italic;
-            color: #6c757d;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.9); /* 卡片背景颜色调整 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        h1 {
+            color: #4a5568;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            text-align: left;
-            width: calc(50% - 20px);
+            font-weight: 700;
         }
-        .card-title {
+        
+        h2 {
+            color: #4a5568;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #4a5568;
+            font-size: 1.3rem;
             margin-bottom: 10px;
+            font-weight: 600;
         }
-        .card-links a {
-            display: block;
-            margin-bottom: 5px;
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: inline-block;
+            margin: 5px 10px;
         }
+        
+        a:hover {
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .quote {
+            margin: 25px 0;
+            font-style: italic;
+            color: #718096;
+            font-size: 1.1rem;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            background-color: rgba(102, 126, 234, 0.05);
+            border-radius: 0 8px 8px 0;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
         .flex-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            gap: 20px;
         }
+        
+        .card-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-title {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title::before {
+            content: '●';
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .card h3 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h3::before {
+            content: '▶';
+            color: #764ba2;
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        .card p {
+            color: #718096;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .card-links a {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card-links a:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .author-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .author-link:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .footer h3 {
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            
+            .card-container {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .card {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
     <div class="container header">
-        <h1>Welcome to Jason4zh's Site</h1>
-        <a href="https://github.com/Jason4zh" target="_blank">作者Github</a>
+        <h1>欢迎来到 Jason4zh 的网站</h1>
+        <a href="https://github.com/Jason4zh" class="author-link">
+            <span>作者Github</span>
+        </a>
         <div class="quote">
             <script language="javascript">
                 var quotes = [
@@ -107,45 +310,76 @@
             </script>
         </div>
     </div>
+    
     <div class="container main">
         <div class="flex-container">
-            <div class="section card">
-                <h2 class="card-title">主要站点</h2>
-                <div class="card">
-                    <h3>流浪地球2原声大碟</h3>
-                    <a href="https://jason4zh.github.io/lldq2music" target="_blank">访问网站</a>
-                </div>
-                <div class="card">
-                    <h3>个人博客</h3>
-                    <a href="https://jason4zh.github.io/blog" target="_blank">访问博客</a>
-                </div>
-                <div class="card">
-                    <h3>在线五子棋</h3>
-                    <a href="https://jason4zh.github.io/online_gobang" target="_blank">开始游戏</a>
+            <div class="card-container">
+                <div class="section">
+                    <h2 class="card-title">主要站点</h2>
+                    <div class="card">
+                        <h3>流浪地球2原声大碟</h3>
+                        <p>欣赏流浪地球2电影原声音乐</p>
+                        <div class="card-links">
+                            <a href="https://jason4zh.github.io/lldq2music">访问网站</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>个人博客</h3>
+                        <p>分享技术心得和生活感悟</p>
+                        <div class="card-links">
+                            <a href="https://jason4zh.github.io/blog">访问博客</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>在线五子棋</h3>
+                        <p>与朋友在线对战五子棋游戏</p>
+                        <div class="card-links">
+                            <a href="https://jason4zh.github.io/online_gobang">开始游戏</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>班级错题共享库</h3>
+                        <p>班级错题整理与分享平台</p>
+                        <div class="card-links">
+                            <a href="https://jason4zh.github.io/classerrorbook">访问错题库</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>ZIP转ARCPKG工具</h3>
+                        <p>将ZIP文件转换为ARCPKG格式</p>
+                        <div class="card-links">
+                            <a href="https://jason4zh.github.io/ziptoarcpkg">使用工具</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="section card">
-                <h2 class="card-title">Python项目</h2>
-                <div class="card">
-                    <h3>项目1: MovingClock</h3>
-                    <p>This is a package which can make a MovingClock.</p>
-                    <a href="https://github.com/Jason4zh/MovingClock/" target="_blank">github</a><br>
-                    <a href="https://pypi.org/project/MovingClock/" target="_blank">pypi</a>
-                </div>
-                <div class="card">
-                    <h3>项目2: WheelDecide</h3>
-                    <p>This is a package which can make a wheel to decide.</p>
-                    <a href="https://github.com/Jason4zh/WheelDecide" target="_blank">github</a><br>
-                    <a href="https://pypi.org/project/WheelDecide/" target="_blank">pypi</a>
+            
+            <div class="card-container">
+                <div class="section">
+                    <h2 class="card-title">Python项目</h2>
+                    <div class="card">
+                        <h3>MovingClock</h3>
+                        <p>这是一个可以制作动态时钟的Python包</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Jason4zh/MovingClock/">GitHub</a>
+                            <a href="https://pypi.org/project/MovingClock/">PyPI</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>WheelDecide</h3>
+                        <p>这是一个可以制作决策转盘的Python包</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Jason4zh/WheelDecide">GitHub</a>
+                            <a href="https://pypi.org/project/WheelDecide/">PyPI</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="container footer">
-        <h3>感谢Github Page提供的站点！</h3>
+        <h3>感谢 GitHub Pages 提供的站点托管服务！</h3>
     </div>
 </body>
 </html>
-
-
-

@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="image/404-favicon.ico">
     <title>Oh! 404 Error :(</title>
     <style>
+        /* 原有样式保持不变 */
         .title{
             margin: auto;
             animation-name: ta;
@@ -27,24 +28,245 @@
             from{transform: translateY(1200%);opacity: 0;}
             to{transform: translateY(0%);opacity: 1;}
         }
+        
+        /* 新增样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* 背景装饰元素 */
+        .bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: #6c5ce7;
+            top: 10%;
+            right: 10%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: #fd79a8;
+            bottom: 10%;
+            left: 10%;
+            animation: float 12s infinite ease-in-out reverse;
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            background: #00b894;
+            top: 40%;
+            left: 5%;
+            animation: float 10s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        
+        /* 内容容器 */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 标题样式 */
+        .title h1 {
+            font-size: 120px;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(108, 92, 231, 0.2);
+            letter-spacing: 15px;
+        }
+        
+        .title h2 {
+            font-size: 28px;
+            color: #2d3436;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .title img {
+            width: 60px;
+            height: 60px;
+            margin: 20px 0;
+            animation: bounce 2s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* 段落样式 */
+        .para {
+            font-size: 20px;
+            color: #636e72;
+            line-height: 1.8;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        
+        /* 按钮样式 */
+        .para a {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+        }
+        
+        .para button {
+            cursor: pointer;
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            width: 180px;
+            height: 60px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .para button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.6);
+        }
+        
+        .para button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(108, 92, 231, 0.4);
+        }
+        
+        .para button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .para button:hover::after {
+            transform: translateX(100%);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .title h1 {
+                font-size: 80px;
+                letter-spacing: 10px;
+            }
+            
+            .title h2 {
+                font-size: 22px;
+            }
+            
+            .para {
+                font-size: 18px;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title h1 {
+                font-size: 60px;
+                letter-spacing: 5px;
+            }
+            
+            .title h2 {
+                font-size: 18px;
+            }
+            
+            .para {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="title">
-        <h1>4  0  4</h1>
-        <h2>Page Not Found</h2>
-        <img src="image/404-cat.png" width="30px" height="30px" alt="图片怎么也不在">
+    <!-- 背景装饰元素 -->
+    <div class="bg-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
     </div>
-    <div class="para">
-        从前有座山<br>
-        山里有座庙<br>
-        庙里有页面<br>
-        我却找不到<br>
-        <a href="https://Jason4zh.github.io/">
-            <button style="cursor: pointer;background: url(image/404-button.png);width: 130px;height: 60px;">
-                返回首页
-            </button>
-        </a>
+    
+    <!-- 主容器 -->
+    <div class="container">
+        <div class="title">
+            <h1>4  0  4</h1>
+            <h2>Page Not Found</h2>
+            <img src="image/404-cat.png" width="30px" height="30px" alt="图片怎么也不在">
+        </div>
+        <div class="para">
+            从前有座山<br>
+            山里有座庙<br>
+            庙里有页面<br>
+            我却找不到<br>
+            <a href="https://Jason4zh.github.io/">
+                <button>
+                    返回首页
+                </button>
+            </a>
+        </div>
     </div>
 </body>
 </html>
